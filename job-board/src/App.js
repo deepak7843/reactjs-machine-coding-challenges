@@ -3,28 +3,32 @@ import { useEffect, useState } from 'react';
 import Card from './Components/Card/Card';
 
 function App() {
-
-  const [candidates, setCandidates] = useState([])
+  const [candidates, setCandidates] = useState([]);
 
   useEffect(() => {
-    fetch('https://randomuser.me/api/?results=5')
-    .then((response) => response.json())
-    .then((result) => {
-      setCandidates(result.results)
-    })
-  }, [])
+    fetch('https://jsonplaceholder.typicode.com/users') // Updated API endpoint
+      .then((response) => response.json())
+      .then((result) => {
+        setCandidates(result); // Use result directly as the API returns an array
+      });
+  }, []);
 
-  console.log('candidates', candidates)
-  
   return (
     <div className="App">
-      {
-        candidates.length > 0 ? candidates.map((item) => {
-          return(
-            <Card src = {item.picture.large} name = {`${item.name.title} ${item.name.first} ${item.name.last}`} phone = {item.cell} email = {item.email} address = {item.location.timezone.description} />
-          )
-        }) : <div>Loading</div>
-      }
+      {candidates.length > 0 ? (
+        candidates.map((item) => (
+          <Card
+            key={item.id} // Add a unique key
+            name={item.name}
+            phone={item.phone}
+            email={item.email}
+            address={`${item.address.street}, ${item.address.city}, ${item.address.zipcode}`} // Combine address fields
+            company={item.company.name} // Add company name
+          />
+        ))
+      ) : (
+        <div>Loading...</div>
+      )}
     </div>
   );
 }

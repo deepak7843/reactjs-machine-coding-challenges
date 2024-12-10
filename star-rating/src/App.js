@@ -3,48 +3,47 @@ import { FaStar } from "react-icons/fa";
 import { useState } from "react";
 
 function App() {
+  const [hoveredIndex, setHoveredIndex] = useState(-1);
+  const [clickedIndex, setClickedIndex] = useState(-1);
 
-  const [hoveredStars, setHoveredStars] = useState([])
-  const [clickedStars, setClickedStars] = useState([])
+  const handleHover = (i) => {
+    setHoveredIndex(i);
+  };
 
-  const handleHoverOver = (i) => {
-    setHoveredStars((prev) => [...prev, i])
-  }
-
-  const handleHoverLeave = () => {
-    setHoveredStars([])
-  }
-
-  const handleStarClick = (i) => {
-    setClickedStars(hoveredStars)
-  }
-
-  console.log('clickedStars', hoveredStars)
-
+  const handleClick = (i) => {
+    setClickedIndex(i);
+  };
 
   const renderStars = () => {
-    let array = [];
+    const stars = [];
     for (let i = 0; i < 5; i++) {
-      array.push(
-        <div 
-          className = {hoveredStars.includes(i) ? 'starDivHover' : 'starDiv'} 
-          onMouseEnter= {() => handleHoverOver(i)}
-          onClick = {() => handleStarClick(i)}
+      stars.push(
+        <div
+          key={i}
+          className="starDiv"
+          onMouseEnter={() => handleHover(i)}
+          onClick={() => handleClick(i)}
         >
-          <FaStar color= {hoveredStars.includes(i) || clickedStars.includes(i) ? 'yellow' : 'lightgrey'} size={40} />
+          <FaStar
+            color={i <= hoveredIndex || i <= clickedIndex ? "yellow" : "lightgrey"}
+            size={40}
+          />
         </div>
       );
     }
-    return array;
+    return stars;
   };
 
-  return( 
-  <div className="App">
-    <div className="starContainer" onMouseLeave = {() => handleHoverLeave()}>
-      {renderStars()}
+  return (
+    <div className="App">
+      <div
+        className="starContainer"
+        onMouseLeave={() => setHoveredIndex(-1)}
+      >
+        {renderStars()}
+      </div>
     </div>
-  </div>
-  )
+  );
 }
 
 export default App;

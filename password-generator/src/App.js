@@ -13,64 +13,11 @@ function App() {
   const [passwordString, setPasswordString] = useState('')
   const [submitClicked, setSubmitClicked] = useState(false)
 
-  const numbersArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-  const specialCharArr = ["@", "#", "$", "%", "^"];
-  const lowercaseArr = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-  ];
-  const uppercaseArr = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "X",
-    "Y",
-    "Z",
-  ];
+  const uppercaseArr = [...Array(26)].map((_, i) => String.fromCharCode(65 + i)); // A-Z
+  const lowercaseArr = [...Array(26)].map((_, i) => String.fromCharCode(97 + i)); // a-z
+  const numbersArr = [...Array(10)].map((_, i) => i.toString()); // 0-9
+  const specialCharArr = "@#$%^&*()".split(""); // Special characters
+  
 
   const onSliderChange = (e) => {
     let newUserInput = { ...userInput, ["length"]: e.target.value };
@@ -93,17 +40,16 @@ function App() {
     if(numbers) characterPool.push(numbersArr)
 
     let characterPoolFlatList = characterPool.flat()
+    console.log('characterPoolFlatList', characterPoolFlatList)
 
-    let characterPoolFlatListJumbled = []
-    for(let i =0; i < characterPoolFlatList.length; i++){
-      characterPoolFlatListJumbled[i] = characterPoolFlatList[Math.floor(Math.random() * characterPoolFlatList.length)]
-    }
-
-    let passwordString = []
+    let passwordString = [];
     while (length > 0) {
-      passwordString.push(characterPoolFlatListJumbled[Math.floor(Math.random() * characterPoolFlatList.length)])
+      passwordString.push(
+        characterPoolFlatList[Math.floor(Math.random() * characterPoolFlatList.length)]
+      );
       length--;
     }
+
     setSubmitClicked(true)
     setPasswordString(passwordString)
   };

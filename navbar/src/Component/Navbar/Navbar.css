@@ -1,6 +1,7 @@
 .navbarContainer{
     width: 100%;
-    background-color: lightcoral;
+    background-color: whitesmoke;
+    border-bottom: 1px solid darkgray;    
     padding: 10px;
     display: flex;
     flex-direction: flex-start;
@@ -35,9 +36,9 @@ nav{
     margin-top: 7vh;
 }
 .sandwichOption{
- border: 1px solid gray;
+ border-bottom: 1px solid gray;
  padding: 5px;   
 }
 .sandwichOption:hover{
-    background-color: lightgrey;
+    background-color: whitesmoke;
 }

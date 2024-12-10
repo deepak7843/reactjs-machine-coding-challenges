@@ -6,10 +6,10 @@ const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const images = [
-    "https://media.geeksforgeeks.org/wp-content/uploads/20230306120634/unnamed.jpg",
-    "https://media.geeksforgeeks.org/wp-content/uploads/20230306120634/unnamed.jpg",
-    "https://media.geeksforgeeks.org/wp-content/uploads/20230306120634/unnamed.jpg",
-    "https://media.geeksforgeeks.org/wp-content/uploads/20230306120634/unnamed.jpg",
+    "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg",
+    "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg",
+    "https://images.pexels.com/photos/572897/pexels-photo-572897.jpeg",
+    "https://images.pexels.com/photos/270756/pexels-photo-270756.jpeg",
   ];
 
   const handlePrevClick = () => {

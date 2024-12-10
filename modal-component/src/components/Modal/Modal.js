@@ -1,17 +1,21 @@
-import React from 'react'
-import Button from '../Button/Button'
-import './Modal.css'
+import React from 'react';
+import Button from '../Button/Button';
+import './Modal.css';
 
-const Modal = ({handleClick}) => {
+const Modal = ({ handleClick }) => {
   return (
-    <div className='modalBody'>
-        <div className='a'>
-            Header
-            <Button text={'close'} handleClick = {handleClick} />
+    <div className="modalOverlay">
+      <div className="modalBody">
+        <div className="modalHeader">
+          <span>Header</span>
+          <Button text="Close" handleClick={handleClick} className="closeButton" />
         </div>
-        Modal
+        <div className="modalContent">
+          This is the modal content.
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Modal
+export default Modal;

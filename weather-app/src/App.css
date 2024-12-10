@@ -4,13 +4,17 @@
 }
 
 .city-name{
-  background-color: lightcoral;
-  padding: 20px;
+  background-color: white;
+  padding: 15px;
   border-radius: 5px;
+  margin: 5px;
+  border: 2px solid darkgray;
+  font-weight: 600;
 }
 .description{
-  background-color: pink;
+  background-color: whitesmoke;
   border-radius: 5px;
-  margin: 2px;
+  margin: 5px;
   padding: 5px;
+  border: 1px solid lightgrey;
 }

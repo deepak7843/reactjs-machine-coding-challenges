@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useTimer = (hoursEntered, minutesEntered, secondsEntered, started) => {
+const useTimer = (hoursEntered, minutesEntered, secondsEntered, started, setStarted) => {
   let totalSecondsInput =
     Number(secondsEntered) +
     Number(minutesEntered * 60) +
@@ -17,6 +17,7 @@ const useTimer = (hoursEntered, minutesEntered, secondsEntered, started) => {
       setSecondsLeft((prev) => {
         if (prev === 1) {
           clearInterval(interval);
+          setStarted(false)
           return 0;
         }
         return prev - 1;

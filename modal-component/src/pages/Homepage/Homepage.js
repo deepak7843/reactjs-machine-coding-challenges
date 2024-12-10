@@ -13,7 +13,7 @@ const Homepage = () => {
     }
   return (
     <div>
-        Homepage
+        <h1>Homepage</h1>
         <Button text = {'Show Modal'} handleClick = {handleOpenClick} />
         {displayModal && <Modal handleClick={handleCloseClick} />}
     </div>

@@ -10,7 +10,6 @@ function App() {
 
 
   const handleClick = async () => {
-    setLiked(!liked)
     setLoading(true)
 
     try {
@@ -26,14 +25,17 @@ function App() {
       );
 
       if(response.status === 200){
-        setLiked(!liked)
+        setLiked(true)
+        setError(null);
       }else{
         const res = await response.json();
         setError(res.message);
+        setLiked(false)
         return;
       }
-    } catch (error) {
-      setError('An unexpected error occured')
+    } catch (error) {        
+        setLiked(false)
+        setError('An unexpected error occured')
     }finally{
       setLoading(false)
     }

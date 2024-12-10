@@ -34,7 +34,6 @@ function App() {
 
   return (
     <div className="App">
-      OTP Login
       <div className="otp-holder">
         {otpArray.map((item) => {
           return (

@@ -7,7 +7,7 @@ function App() {
       <header>Header</header>
       <div className="mid-section">
         <div className="left-mid-section">
-          <aside>aside</aside>  
+          <aside>Aside</aside>  
         </div>
         <div className="right-mid-section">
           <div className="right-mid-section-top">

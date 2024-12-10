@@ -12,7 +12,7 @@ const Button = ({ onClick, liked, loading, error }) => {
       </span> 
       {loading === true ? <FaFighterJet /> : <FaHeart/>}
     </button>
-    {error}
+    <div>{liked === true ? "Liked" : error}</div>
     </div>
   );
 };

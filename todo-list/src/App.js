@@ -13,16 +13,15 @@ function App() {
     setTitle('')
   }
 
-  console.log('workList', workList)
-
   const handleInputChange = (e) => {
     setTitle((prev) => e.target.value)
   }
 
   return (
     <div className="App">
+      <h2>ToDo List</h2> 
       <input type='text' value = {title} onChange={(e) => handleInputChange(e)} />
-      <input type='submit' text = 'Submit' onClick={handleSave} />
+      <input type='submit' text = 'Submit' onClick={handleSave} className = 'tileButton' />
       {workList.map((item) => {
         return(
           <WorkTile title = {item} workList = {workList} setWorkList = {setWorkList} />

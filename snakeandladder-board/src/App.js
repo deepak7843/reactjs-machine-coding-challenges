@@ -27,7 +27,6 @@ function App() {
   console.log(data)
   return (
     <div className="App">
-      Hello
       <div  className = 'game-board'>
       {data.map((item) => {
         return(

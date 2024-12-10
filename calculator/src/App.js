@@ -1,65 +1,78 @@
-import logo from './logo.svg';
-import './App.css';
-import { useState } from 'react';
+import React, { useState } from "react";
+import "./App.css";
 
-function App() {
-  const numbers= [1,2,3,4,5,6,7,8,9,0]
-  const expressions = ['+', '-', '*', '%']
+const App = () => {
+  const [input, setInput] = useState("");
+  const [result, setResult] = useState("");
 
-  const [userInput, setUserInput] = useState('')
-  const [result, setResult] = useState(null)
-  const [submitClicked, setSubmitClicked] = useState(false)
+  const handleButtonClick = (value) => {
+    setInput((prev) => prev + value);
+  };
 
-  const handleClick = (input) => {
-    setUserInput(prevInput => prevInput + input.toString());
-  }
-  console.log('userInput', userInput)
+  const clearInput = () => {
+    setInput("");
+    setResult("");
+  };
 
+  const calculateResult = () => {
+    let num1 = "";
+    let num2 = "";
+    let operator = "";
 
-  const handleSubmit = () => {
-    let value = eval(userInput)
-    console.log('value', value)
-    setResult(value)
-    setSubmitClicked(true)
-  }
+    for (let i = 0; i < input.length; i++) {
+      const char = input[i];
+      if (["+", "-", "*", "/"].includes(char)) {
+        operator = char;
+      } else if (!operator) {
+        num1 += char;
+      } else {
+        num2 += char;
+      }
+    }
 
-  const handleReset = () => {
-    setResult(null)
-    setSubmitClicked(false)
-    setUserInput('')
-  }
+    num1 = parseFloat(num1);
+    num2 = parseFloat(num2);
+
+    let calcResult = 0;
+    if (operator === "+") calcResult = num1 + num2;
+    if (operator === "-") calcResult = num1 - num2;
+    if (operator === "*") calcResult = num1 * num2;
+    if (operator === "/") calcResult = num2 !== 0 ? num1 / num2 : "Error";
+    setResult("");
+
+    setResult(calcResult);
+  };
 
   return (
-    <div className="App">
-      <div className='user-input-and-calc'>
-         {submitClicked ? result : userInput}
+    <div className="calculator-container">
+      <input
+        type="text"
+        value={input}
+        readOnly
+        className="calculator-input"
+      />
+      <div className="result">Result: {result}</div>
+      <div className="buttons-container">
+        {[1, 2, 3, "+", 4, 5, 6, "-", 7, 8, 9, "*", 0, "/", "C", "="].map((btn) => (
+          <button
+            key={btn}
+            onClick={
+              btn === "C"
+                ? clearInput
+                : btn === "="
+                ? calculateResult
+                : () => handleButtonClick(btn.toString())
+            }
+            className={`calculator-button ${
+              btn === "C" ? "clear" : btn === "=" ? "equal" : ""
+            }`}
+          >
+            {btn}
+          </button>
+        ))}
       </div>
-      
-      <div className='number-holder'>
-      {
-        numbers.map((item) => {
-          return(
-            <button onClick={() => handleClick(item)}>{item}</button> 
-          )
-        })
-      }
-      </div>
-
-      <div className='expression-holder'>
-      {
-        expressions.map((item) => {
-          return(
-            <button onClick={() => handleClick(item)}>{item}</button> 
-          )
-        })
-      }
-      </div>
-      
-      <button onClick={() => handleSubmit()}>Submit</button> 
-      <button onClick={() => handleReset()}>Reset</button> 
-
     </div>
   );
-}
+};
 
 export default App;

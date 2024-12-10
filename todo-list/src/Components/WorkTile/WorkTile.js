@@ -39,14 +39,18 @@ const WorkTile = ({ title, workList, setWorkList }) => {
             onChange={handleChange}
             className='tileInput'
           />
-          <button onClick={handleSave} className='tileButton saveButton'>Save</button>
-          <button onClick={handleCancel} className='tileButton cancelButton'>Cancel</button>
+          <div className='tileButtonContainer'>
+            <button onClick={handleSave} className='tileButton saveButton'>Save</button>
+            <button onClick={handleCancel} className='tileButton cancelButton'>Cancel</button>
+          </div>
         </>
       ) : (
         <>
           <p className='tileTitle'>{title}</p>
-          <button onClick={handleEdit} className='tileButton editButton'>Edit</button>
-          <button onClick={() => handleDelete(title)} className='tileButton deleteButton'>Delete</button>
+          <div className='tileButtonContainer'>
+            <button onClick={handleEdit} className='tileButton editButton'>Edit</button>
+            <button onClick={() => handleDelete(title)} className='tileButton deleteButton'>Delete</button>
+          </div>
         </>
       )}
     </div>

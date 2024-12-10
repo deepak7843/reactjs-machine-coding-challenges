@@ -44,6 +44,7 @@ const Question = () => {
 
   const handlePrevClick = () => {
     setActiveQuestionIndex(activeQuestionIndex - 1);
+ 
   };
 
   const handleNextClick = () => {

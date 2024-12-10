@@ -38,8 +38,7 @@ const App = () => {
   console.log("items", items);
 
   return (
-    <div>
-      App
+    <div className="holder">
       {items.map((item, index) => {
         return (
           <div

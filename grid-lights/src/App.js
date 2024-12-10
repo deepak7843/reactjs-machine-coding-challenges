@@ -10,7 +10,6 @@ function App() {
     if (i !== 4 && !clickedTiles.includes(i)) {
       setClickedTiles((prev) => {
         let newTileArray = [...prev, i];
-        console.log("newTileArray", newTileArray);
         if (newTileArray.length === 8) {
           setRemoveTiles(true);
         }
@@ -18,7 +17,6 @@ function App() {
       });
     }
   };
-  console.log("clickedTiles", clickedTiles);
 
   useEffect(() => {
     let interval;
@@ -50,7 +48,7 @@ function App() {
           }
           onClick={() => handleClick(i)}
         >
-          {`Hello ${i}`}
+          {`${i + 1}`}
         </div>
       );
     }

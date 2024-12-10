@@ -1,20 +1,16 @@
-import React from 'react'
-import './Card.css'
+import React from 'react';
+import './Card.css';
 
-const Card = ({src, name, phone, email, address}) => {
+const Card = ({ name, phone, email, address, company }) => {
   return (
-    <div className='user-card'>
-        <div className='left-side'>
-            <img src={src} />
-        </div>
-        <div className='right-side'>
-            <div className='description'>{`Name: ${name}`}</div>
-            <div className='description'>{`Phone: ${phone}`}</div>
-            <div className='description'>{`Email: ${email}`}</div>
-            <div className='description'>{`Address: ${address}`}</div>
-        </div>
+    <div className="user-card">
+        <div className="description">{`Name: ${name}`}</div>
+        <div className="description">{`Phone: ${phone}`}</div>
+        <div className="description">{`Email: ${email}`}</div>
+        <div className="description">{`Address: ${address}`}</div>
+        <div className="description">{`Company: ${company}`}</div>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
