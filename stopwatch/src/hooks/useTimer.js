@@ -1,23 +1,24 @@
 import { useEffect, useState } from "react";
 
-const useTimer = (initialVal, paused, completed) => {
-  console.log('paused, completed', paused, completed);
+const useTimer = (initialVal, active, paused, completed) => {
   const [current, setCurrent] = useState(initialVal);
 
   useEffect(() => {
     let handler;
 
     if (completed) {
-        setCurrent(initialVal)
-    } else {
+    // Reset when completed
+      setCurrent(initialVal); 
+    } else if (active && !paused) {
       handler = setInterval(() => {
+         // Increment timer
         setCurrent((prev) => prev + 1);
       }, 1000);
     }
 
-    return () => clearInterval(handler);
-
-  }, [paused, completed, current]);
+    // Clean up interval
+    return () => clearInterval(handler); 
+  }, [active, paused, completed, initialVal]);
 
   return { current, setCurrent };
 };

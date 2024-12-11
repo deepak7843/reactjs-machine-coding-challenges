@@ -1,34 +1,53 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import useTimer from "./hooks/useTimer";
 
 function App() {
   const [active, setActive] = useState(false);
   const [paused, setPaused] = useState(false);
-  const [completed, setCompleted] = useState(false)
+  const [completed, setCompleted] = useState(false);
 
-  const {current} = useTimer(10, paused, completed)
+  const { current } = useTimer(10, active, paused, completed);
 
-  const handleMainButtonClick = () => {
-    setActive((prev) => !prev);
+  const handleStartOrResumeClick = () => {
+    setActive(true);
+    setPaused(false);
+    setCompleted(false); // Reset the "completed" state
   };
-  
+
+  const handlePauseButtonClick = () => {
+    setPaused(true);
+  };
+
   const handleStopButtonClick = () => {
-    setCompleted((prev) => !prev);
-  }
+    setCompleted(true);
+    setActive(false);
+    setPaused(false);
+  };
 
   return (
     <>
-      <h1>Vite + React</h1>
+      <h1>React Timer</h1>
       <div className="card">
-        <button onClick={() => handleMainButtonClick()}>
-          {active ? "Pause" : "Start"}
+        {/* Start/Resume Button */}
+        <button
+          onClick={handleStartOrResumeClick}
+          disabled={active && !paused} // Disabled when running
+        >
+          {paused ? "Resume" : "Start"}
         </button>
+
+        {/* Pause Button */}
+        <button onClick={handlePauseButtonClick} disabled={!active || paused}>
+          Pause
+        </button>
+
+        {/* Timer Display */}
         <div>Current: {current}</div>
-        <button onClick={() => handleStopButtonClick()}>
-          {"Stop"}
+
+        {/* Stop Button */}
+        <button onClick={handleStopButtonClick} disabled={completed}>
+          Stop
         </button>
       </div>
     </>
