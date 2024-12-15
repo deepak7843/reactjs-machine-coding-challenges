@@ -41,3 +41,12 @@
 .imageContainer button:hover {
     background: #ccc;
 }
+
+.textContainer{
+    margin-top: 10px;
+}
+
+.text{
+    font-size: 12px;
+    color: grey;
+}

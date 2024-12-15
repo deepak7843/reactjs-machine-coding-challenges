@@ -36,6 +36,9 @@ const Carousel = () => {
         <img src={images[activeIndex]} />
         <button onClick={handlePrevClick}>Prev</button>
         <button onClick={handleNextClick}>Next</button>
+        <div className="textContainer">
+          <span className="text">{`${activeIndex+1} of ${images.length}`}</span>
+        </div>
       </div>
     </div>
   );
