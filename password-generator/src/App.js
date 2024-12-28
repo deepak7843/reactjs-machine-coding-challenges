@@ -104,7 +104,7 @@ function App() {
         </div>
       </div>
       <button onClick={() => generatePassword()}>Generate Password</button>
-      <div>{submitClicked && passwordString}</div>
+      <div className="passwordHolder">{submitClicked && passwordString}</div>
     </div>
   );
 }

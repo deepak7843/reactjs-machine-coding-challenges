@@ -1,19 +1,19 @@
 .componentTile {
     width: 35%;
     margin: 15px auto; 
-    border: 1px solid darkgrey;
+    border: 2px solid lightblue;
     border-radius: 5px;
-    background-color: whitesmoke; 
+    background-color: #fbfbfb; 
     overflow: hidden; 
 }
 
 .componentHeader {
-    background-color: lightgrey;
+    background-color: #fbfbfb;
     padding: 10px;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
-    border-bottom: 1px solid darkgrey; 
+    border-bottom: 2px solid lightblue; 
     text-align: center; 
 }
 
@@ -26,7 +26,7 @@
 
 .componentOption span {
     padding: 8px;
-    border-top: 1px solid lightgrey; 
+    border-top: 1px solid whitesmoke; 
     font-size: 14px;
     text-align: left; 
 }

@@ -28,3 +28,19 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+.div1{
+  display: flex;
+  justify-content: center;
+}
+.div2{
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+}
+.text{
+  margin-right: 20px;
+}
+input{
+  border: 1px solid lightgray;
+}

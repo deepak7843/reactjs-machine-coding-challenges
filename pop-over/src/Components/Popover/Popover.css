@@ -4,7 +4,7 @@
 }
 
 .popoverContainer{
-    border: 1px solid gray;
+    border: 2px solid lightblue;
     text-align: left;
     margin-top: 15px;
     font-size: 14px;
@@ -12,7 +12,7 @@
 }
 
 .popoverHeader{
-    background-color: lightgray;
+    background-color: lightblue;
     padding: 5px 0px 5px 5px;
 }
 
@@ -23,7 +23,7 @@
 .triangle {
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 10px solid gray;
+    border-bottom: 10px solid lightblue;
     position: absolute;
     margin-left: 48%;
     top: -10px;
@@ -31,5 +31,10 @@
 
 button{
     cursor: pointer;
+    background-color: lightblue;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
 }
   

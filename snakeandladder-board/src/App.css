@@ -5,6 +5,18 @@
   width: max-content;
   margin: 5vh;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 .game-cell{
   height: 50px;
   width: 50px;
@@ -13,7 +25,7 @@
   padding: 2px;
   cursor: pointer;
   font-size: 14px;
-  align-items: center;
+  align-items: center;  
   display: flex;
   justify-content: center;
 }

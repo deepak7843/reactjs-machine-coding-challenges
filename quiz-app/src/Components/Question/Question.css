@@ -17,6 +17,7 @@
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10vh;
 }
 .quiz-options:hover{
     background-color: lightgrey;
@@ -25,4 +26,12 @@ button{
     margin: 5px;
     padding: 10px;
     cursor: pointer;
+}
+
+.score{
+    font-size: 20px
+}
+
+.result-question{
+    padding: 10px;
 }

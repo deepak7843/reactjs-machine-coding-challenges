@@ -35,16 +35,17 @@ console.log(secondsLeft)
   return (
     <div className="App">
       {started ? (
-        <>
-          <div>
-            <p>Hours Left: {Math.floor(secondsLeft / 3600)}</p>
-            <p>Minutes Left: {Math.floor((secondsLeft % 3600) / 60)}</p>
-            <p>Seconds Left: {secondsLeft % 60}</p>
+        <div>
+          <div  className = "div1">
+            <p className="text">Hours Left: {Math.floor(secondsLeft / 3600)}</p>
+            <p className="text">Minutes Left: {Math.floor((secondsLeft % 3600) / 60)}</p>
+            <p className="text">Seconds Left: {secondsLeft % 60}</p>
+            <button onClick={handleReset}>Reset</button>
+
           </div>
-          <button onClick={handleReset}>Reset</button>
-        </>
+        </div>
       ) : (
-        <>
+        <div className = "div2">
           <div>
             <label>H:</label>
             <input
@@ -70,7 +71,7 @@ console.log(secondsLeft)
             />
           </div>
           <button onClick={handleStart}>Start</button>
-        </>
+        </div>
       )}
     </div>
   );

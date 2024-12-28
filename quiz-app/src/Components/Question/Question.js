@@ -72,7 +72,7 @@ const Question = () => {
     <div className="game-holder">
       {gameComplete ? (
         <div>
-          <span>Your Score: {currentScore}</span>
+          <span className="score">Your Score: {currentScore}</span>
           <div className="result-holder">
             {questions.map((question, index) => (
               <div key={index} className="result-question">

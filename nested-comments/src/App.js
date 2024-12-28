@@ -186,7 +186,6 @@ function App() {
   };
   return (
     <div className="App">
-      Hello
       {data.map((post) => {
         return (
           <div className="single-post">

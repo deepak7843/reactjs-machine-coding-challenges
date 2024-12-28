@@ -38,7 +38,7 @@ function App() {
         <>
           <div className="city-name">{response.name}</div>
           <div className="description">{`Current Temperature: ${response.main.temp} F`}</div> 
-          <div className="description">{`Description: ${response.weather[0].description} F`}</div> 
+          <div className="description">{`Description: ${response.weather[0].description}`}</div> 
           <div className="description">{`Max Temperature: ${response.main.temp_max} F`}</div> 
           <div className="description">{`Min Temperature: ${response.main.temp_min} F`}</div> 
           <div className="description">{`Humidity: ${response.main.humidity} F`}</div> 
