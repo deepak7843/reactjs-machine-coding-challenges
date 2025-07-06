@@ -1,6 +1,28 @@
 
 # React JS Machine Coding Challenges
 
+## 📘 eBook Available — Bravo ReactJS Machine Coding
+
+**Get the eBook:**  👉 [Click Here](https://topmate.io/sanchit496/1355781?utm_source=public_profile&utm_campaign=sanchit496)
+
+Prepare for machine coding interviews with this comprehensive guide featuring **30 scenario-based questions** modeled on real-world problems. Each challenge is designed to strengthen your problem-solving approach and frontend architecture skills.
+
+### 🔍 What You’ll Find Inside:
+- **Scenario-Based Questions**  
+  Realistic challenges inspired by actual interview rounds.
+- **Complete GitHub Code**  
+  Full implementations with clean, maintainable code.
+- **Step-by-Step Explanations**  
+  Detailed walkthroughs that build your confidence and clarity.
+- **Key Takeaways**  
+  Important concepts, reusable patterns, and system design tips.
+- **Pro-Level Interview Tips**  
+  Edge case handling and optimization strategies that stand out in interviews.
+
+Whether you're preparing for top product companies or brushing up your skills, this eBook is your step-by-step companion to mastering ReactJS machine coding rounds.
+
+---
+
 ## Overview
 This repository contains a collection of ReactJS machine coding questions with solutions. These projects are created to help improve your ReactJS skills and understanding of various web technologies. Feel free to explore, use, and contribute to these projects.
 
