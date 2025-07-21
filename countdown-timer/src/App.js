@@ -17,7 +17,6 @@ function App() {
   );
 
   const handleStart = () => setStarted(true);
-
   const handleReset = () => {
     setStarted(false);
     setHoursEntered(0);
