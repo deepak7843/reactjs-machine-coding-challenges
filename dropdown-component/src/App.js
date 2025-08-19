@@ -14,8 +14,8 @@ function App() {
     {
       title: 'Title 02',
       options: [
-        'Option 01',
-        'Option 02'
+        'Option 01..',
+        'Option 02..'
       ]
     }
   ]
