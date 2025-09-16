@@ -19,6 +19,8 @@ function App() {
   return (
     <>
       <div className="card">
+      <h1 style={{ marginBottom: '20px' }}>Throttle Demo</h1>
+
         <input 
           type= 'text'
           onChange = {(e) => handleChange(e)}

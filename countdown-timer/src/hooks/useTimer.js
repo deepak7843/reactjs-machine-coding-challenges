@@ -13,18 +13,52 @@ const useTimer = (hoursEntered, minutesEntered, secondsEntered, started, setStar
     if (!started) return;
 
     setSecondsLeft(totalSecondsInput);
-    let interval = setInterval(() => {
+
+    // const tick= ()=>{
+      
+    // }
+
+    let intervalId = setInterval(() => {
       setSecondsLeft((prev) => {
         if (prev === 1) {
-          clearInterval(interval);
+          clearInterval(intervalId);
           setStarted(false)
           return 0;
         }
         return prev - 1;
       });
     }, 1000);
-    return () => clearInterval(interval);
+    return () => clearInterval(intervalId);
   }, [totalSecondsInput, started]);
+
+
+  // Perfect 👍 Let’s rewrite your countdown using setTimeout instead of setInterval.
+  // This way, we don’t need to manually clear the interval inside the countdown logic — React’s cleanup will handle it neatly.
+
+  // Cleaner useEffect with setTimeout
+  // useEffect(() => {
+  //   if (!started) return;
+  
+  //   // reset countdown whenever timer starts
+  //   setSecondsLeft(totalSecondsInput);
+  
+  //   const tick = () => {
+  //     setSecondsLeft((prev) => {
+  //       if (prev <= 1) {
+  //         setStarted(false);
+  //         return 0;
+  //       }
+  //       return prev - 1;
+  //     });
+  //   };
+  
+  //   // schedule a tick every second
+  //   const timeoutId = setTimeout(tick, 1000);
+  
+  //   return () => clearTimeout(timeoutId);
+  // }, [secondsLeft, started, totalSecondsInput]);
+  
+
 
   return {
     secondsLeft,
