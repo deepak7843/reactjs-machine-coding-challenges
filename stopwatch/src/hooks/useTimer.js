@@ -4,6 +4,7 @@ const useTimer = (initialVal, active, paused, completed) => {
   const [current, setCurrent] = useState(initialVal);
 
   useEffect(() => {
+
     let handler;
 
     if (completed) {

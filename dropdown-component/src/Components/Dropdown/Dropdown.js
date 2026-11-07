@@ -3,7 +3,7 @@ import "./Dropdown.css";
 
 const Dropdown = ({ componentObject }) => {
   const [clickedHeader, setClickedHeader] = useState("");
-  const [clickedOption, setClickedOption] = useState("")
+  // const [clickedOption, setClickedOption] = useState("")
 
   const headerClick = () => {
     console.log("componentObject", componentObject);
@@ -15,19 +15,15 @@ const Dropdown = ({ componentObject }) => {
   };
 
   const handleOptionClick = (options) => {
-    setClickedOption(options)
+    // setClickedOption(options)
     setClickedHeader('')
   }
 
   const getReturnOptions = (componentObject) => {
     if (clickedHeader === componentObject.title) {
-      let options = [];
-      {
-        componentObject.options.map((option, index) => {
-          options.push(<span key = {index} onClick={() => handleOptionClick(option)}>{option}</span>);
-        });
-      }
-      return options;
+      return componentObject.options.map((option, index) => (
+        <span key={index} onClick={() => handleOptionClick(option)}>{option}</span>
+      ));
     } else {
       return null;
     }
@@ -36,7 +32,7 @@ const Dropdown = ({ componentObject }) => {
   return (
     <div className="componentTile">
       <div className="componentHeader" onClick={headerClick}>
-        {componentObject.title}
+        {componentObject.title} 
       </div>
       <div className="componentOption">{getReturnOptions(componentObject)}</div>
     </div>

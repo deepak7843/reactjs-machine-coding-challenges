@@ -12,6 +12,14 @@ const Carousel = () => {
     "https://images.pexels.com/photos/270756/pexels-photo-270756.jpeg",
   ];
 
+  // const images = [
+  //   "https://images.pexels.com/photos/34950/pexels-photo.jpg",         // Beach & sea
+  //   "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg", // Mountains landscape
+  //   "https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg", // City skyline
+  //   "https://images.pexels.com/photos/462162/pexels-photo-462162.jpeg", // Forest road
+  // ];
+  
+
   const handlePrevClick = () => {
     if(activeIndex === 0){
         setActiveIndex((prev) => images.length - 1)

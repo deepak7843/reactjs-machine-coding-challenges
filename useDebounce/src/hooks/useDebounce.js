@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react"
 const useDebounce = (value, interval) => {
     const [debouncedValue, setDebouncedValue] = useState(value)
     const lastExecutionTime = useRef(Date.now())
+    //  console.log("lastExecutionTime--", lastExecutionTime);
 
     useEffect(() => {
         const timeElapsed = Date.now() - lastExecutionTime.current
@@ -22,6 +23,7 @@ const useDebounce = (value, interval) => {
             clearTimeout(handler)
         })
       }
+
     }, [value, interval])
     
 
